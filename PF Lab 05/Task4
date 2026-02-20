@@ -1,0 +1,55 @@
+#include <stdio.h>
+int main(){
+    int category, type, quantity;
+    int price, totalBill;
+    
+    printf("enter category (1-Fiction, 2-NonFiction): ");
+    scanf("%d", &category);
+    printf("enter quantity: ");
+    scanf("%d", &quantity);
+
+    switch(category)
+    {
+        case 1:
+            printf("enter type (1-Novel, 2-Comic): ");
+            scanf("%d", &type);
+
+            switch (type)
+            {
+            case 1:
+                price = 600;
+                printf("Selected:Novel\n");
+                break;
+            
+            case 2:
+                price = 300;
+                printf("Slected:Comic\n");
+                break;
+            }
+            break;
+
+        case 2:
+            printf("enter type (1-Biography 2-Self Help); ");
+            scanf("%d", &type);
+
+            switch (type)
+            {
+                case 1:
+                    price = 800;
+                    printf("Selected:Biography\n");
+                    break;
+                case 2:
+                    price = 500;
+                    printf("Selected:Self Help\n");
+                break;
+            }
+            break;
+
+    }
+
+    totalBill = price *quantity;
+    printf("total bill = Rs. %d\n", totalBill);
+   
+    return 0;
+
+}
