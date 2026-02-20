@@ -1,0 +1,53 @@
+#include <stdio.h>
+int main(){
+    int mainType, subType;
+    float weight, rate, totalFee;
+    
+    printf("enter luggage type (1-Handbag, 2-Checked bag, 3-Sports Equipemnet): ");
+    scanf("%d", &mainType);
+    printf("enter weight (kg): ");
+    scanf("%f", &weight);
+
+    switch(mainType)
+    {
+        case 1:
+            printf("enter type (1-Small, 2-Large)");
+            scanf("%d", &subType);
+
+            switch (subType)
+            {
+            case 1:
+                rate = 100;
+                break;
+            
+            case 2:
+                rate = 200;
+                break;
+            }
+            break;
+
+        case 2:
+            printf("enter type (1-Domestic, 2-Intermational); ");
+            scanf("%d", &subType);
+
+            switch (subType)
+            {
+                case 1:
+                    rate = 300;
+                    break;
+                case 2:
+                rate = 500;
+                break;
+            }
+            break;
+
+        case 3:
+            rate = 1000;
+            break;
+    }
+    totalFee = weight *rate;
+    printf("total luggage fee = Rs. %2f\n", totalFee);
+   
+    return 0;
+
+}
