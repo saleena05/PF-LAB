@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int seats = 40;
+    int choice = 1;
+
+    while(seats > 0 && choice != 0) {
+
+        printf("Press 1 to book seat or 0 to stop: ");
+        scanf("%d", &choice);
+
+        if(choice == 1) {
+            seats--;
+            printf("Seat booked. Remaining seats: %d\n", seats);
+        }
+    }
+
+    if(seats == 0) {
+        printf("All seats are booked.\n");
+    }
+
+    return 0;
+}
+
