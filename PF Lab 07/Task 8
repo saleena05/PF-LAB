@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[100];
+
+    printf("Enter characters (non alphabets only will be stored):\n");
+
+    scanf("%[^A-Za-z]", str);
+
+    printf("Non alphabet characters entered:\n%s", str);
+
+    return 0;
+}
