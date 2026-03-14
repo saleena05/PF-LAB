@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main()
+{
+    int A[3][3], transpose[3][3];
+    int i,j;
+    int determinant;
+
+    printf("Enter 3x3 matrix:\n");
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&A[i][j]);
+        }
+    }
+
+    printf("\nMatrix:\n");
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",A[i][j]);
+        }
+        printf("\n");
+    }
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            transpose[j][i] = A[i][j];
+        }
+    }
+
+    printf("\nTranspose:\n");
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    determinant =
+        A[0][0]*(A[1][1]*A[2][2] - A[1][2]*A[2][1])
+      - A[0][1]*(A[1][0]*A[2][2] - A[1][2]*A[2][0])
+      + A[0][2]*(A[1][0]*A[2][1] - A[1][1]*A[2][0]);
+
+    printf("\nDeterminant = %d\n", determinant);
+
+    return 0;
+}
