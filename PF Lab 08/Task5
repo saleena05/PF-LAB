@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main()
+{
+    int A[5][5];
+    int r,c,i,j;
+
+    int zero=1,identity=1,diagonal=1,upper=1,lower=1;
+
+    printf("Enter rows and columns (max 5): ");
+    scanf("%d %d",&r,&c);
+
+    printf("Enter matrix:\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&A[i][j]);
+        }
+    }
+
+    if(r==c)
+        printf("Square Matrix\n");
+    else
+        printf("Rectangular Matrix\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(A[i][j]!=0)
+                zero=0;
+
+            if(i!=j && A[i][j]!=0)
+                diagonal=0;
+
+            if(i>j && A[i][j]!=0)
+                upper=0;
+
+            if(i<j && A[i][j]!=0)
+                lower=0;
+
+            if(i==j && A[i][j]!=1)
+                identity=0;
+
+            if(i!=j && A[i][j]!=0)
+                identity=0;
+        }
+    }
+
+    if(zero) printf("Zero Matrix\n");
+    if(identity) printf("Identity Matrix\n");
+    if(diagonal) printf("Diagonal Matrix\n");
+    if(upper) printf("Upper Triangular Matrix\n");
+    if(lower) printf("Lower Triangular Matrix\n");
+
+    return 0;
+}
