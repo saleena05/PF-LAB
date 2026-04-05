@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int arr[6], i;
+    int *p = arr;
+    int highest;
+
+    printf("Enter 6 marks:\n");
+    for (i = 0; i < 6; i++)
+        scanf("%d", (p + i));
+
+    printf("Original Marks:\n");
+    for (i = 0; i < 6; i++)
+        printf("%d ", *(p + i));
+
+    highest = *p;
+    for (i = 1; i < 6; i++)
+        if (*(p + i) > highest)
+            highest = *(p + i);
+
+    for (i = 0; i < 6; i++)
+        *(p + i) = (int)(((float)*(p + i) / highest) * 100);
+
+    printf("\nScaled Marks:\n");
+    for (i = 0; i < 6; i++)
+        printf("%d ", *(p + i));
+
+    return 0;
+}
