@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char password[] = "secure123";
+    char input[50];
+    int attempts = 0;
+
+    while (attempts < 3) {
+        printf("Enter password: ");
+        scanf("%s", input);
+
+        if (strlen(input) == 0) {
+            printf("Empty password not allowed\n");
+            continue;
+        }
+
+        if (strcmp(input, password) == 0) {
+            printf("Access Granted\n");
+            return 0;
+        } else {
+            if (attempts == 1) {
+                if (strncmp(input, password, 3) == 0)
+                    printf("Hint: First 3 characters match\n");
+            }
+
+            if (strcmp(input, password) < 0)
+                printf("Input is alphabetically before password\n");
+            else
+                printf("Input is alphabetically after password\n");
+        }
+
+        attempts++;
+    }
+
+    printf("Account Locked\n");
+    return 0;
+}
