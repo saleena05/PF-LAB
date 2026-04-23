@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int totalPower(int floors)
+{
+    // Base case
+    if (floors == 1)
+        return 100;
+
+    // Recursive case
+    int currentFloorPower = 100;
+    for (int i = 1; i < floors; i++)
+        currentFloorPower *= 2;
+
+    return currentFloorPower + totalPower(floors - 1);
+}
+
+int main()
+{
+    int floors;
+
+    printf("Enter number of floors: ");
+    scanf("%d", &floors);
+
+    printf("Total Power Consumption: %d kWh\n", totalPower(floors));
+
+    return 0;
+}
